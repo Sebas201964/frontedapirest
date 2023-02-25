@@ -19,7 +19,7 @@ const ProductForm = (props) => {
   const initialProductState = {
     _id: null,
     name: "",
-    price: 2.5,
+    precio: 0,
     expiry_date: null,
   };
 

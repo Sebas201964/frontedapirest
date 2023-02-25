@@ -1,0 +1,10 @@
+use ('bdtitanic');
+db.titanic.find().sort({PassengerId:1})
+db.titanic.find().count()
+db.titanic.find ( { Sex: { $ne : "male" }},{_id:0,Name:1, Sex:1})
+db.titanic.find( { Age: { $gte : "30" }},{_id:0, Name:1, Age:1})
+db.titanic.find ( { Embarked: { $eq : "S" }},{_id:0,Name:1, Sex:1, Embarked:1})
+db.titanic.find ( { Embarked: { $eq : "C" }, Sex:{$eq:"female"}},{_id:0,Name:1, Sex:1, Embarked:1})
+db.titanic.updateOne({ Embarked: {$eq:"S"}} ,{$set: {guardias:['Juan Ramirez','Pedro Sarmiento']}})
+db.titanic.updateOne({Embarked: {$eq:"C"}},{$unset:{guardias:''}})
+db.titanic.find();
